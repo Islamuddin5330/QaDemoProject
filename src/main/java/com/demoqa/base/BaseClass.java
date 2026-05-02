@@ -50,6 +50,7 @@ public class BaseClass {
 	public void tearDown() {
 		if(getDriver() != null) {
 			getDriver().quit();
+			driver.remove();
 		}
 	}
 }
