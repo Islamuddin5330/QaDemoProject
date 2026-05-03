@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-	http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>DemoQa</groupId>
 	<artifactId>DemoQaSit</artifactId>
@@ -13,6 +12,11 @@
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.10.0</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.8.0</version>
 		</dependency>
 		<!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -41,6 +45,18 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.22.0</version>
 			<scope>compile</scope>
+		</dependency>
+		<!-- Source: https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.5.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.5</version> <!-- or latest -->
 		</dependency>
 	</dependencies>
 </project>

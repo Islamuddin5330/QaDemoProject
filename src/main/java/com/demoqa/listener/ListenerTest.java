@@ -22,11 +22,16 @@ public class ListenerTest implements ITestListener{
 	ExtentReports extent = ExtentManager.getExtentReport();
 	ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
 	
+//	@Override
+//	public void onTestStart(ITestResult result) {
+////		test = extent.createTest(result.getMethod().getMethodName());
+//		ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
+//		test.set(extentTest);
+//	}
 	@Override
 	public void onTestStart(ITestResult result) {
-//		test = extent.createTest(result.getMethod().getMethodName());
-		ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
-		test.set(extentTest);
+	    ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
+	    test.set(extentTest);
 	}
 
 	@Override
@@ -37,28 +42,34 @@ public class ListenerTest implements ITestListener{
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-//		test.log(Status.FAIL, "Test Failed: " + result.getName());
-//		test.get().fail("Test Failed: " + result.getName().addScreenCaptureFromPath(path));
-		String fileName = result.getName() + "_" + System.currentTimeMillis();
-		String path = System.getProperty("user.dir")+"\\src\\test\\resources\\ScreenShot\\" + fileName + ".png";
-		
-//		WebDriver driver = driver;
-//		 WebDriver driver = (WebDriver) result.getTestContext().getAttribute("driver");
-		WebDriver driver = BaseClass.getDriver();
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File source = ts.getScreenshotAs(OutputType.FILE);
-		File descr = new File(path);
-		
-		try {
-			FileUtils.copyFile(source, descr);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-//		test.addScreenCaptureFromPath(path);
-		test.get().fail("Test Failed : " + result.getName()).addScreenCaptureFromPath(path);
-		
-		System.out.println("Screenshot saved at: " + path);
+
+	    ExtentTest extentTest = test.get();
+
+	    if (extentTest == null) {
+	        extentTest = extent.createTest(result.getMethod().getMethodName());
+	        test.set(extentTest);
+	    }
+
+	    String fileName = result.getName() + "_" + System.currentTimeMillis();
+	    String path = System.getProperty("user.dir") + "\\src\\test\\resources\\ScreenShot\\" + fileName + ".png";
+
+	    try {
+	        WebDriver driver = BaseClass.getDriver();
+
+	        if (driver != null) {
+	            TakesScreenshot ts = (TakesScreenshot) driver;
+	            File source = ts.getScreenshotAs(OutputType.FILE);
+	            File dest = new File(path);
+	            FileUtils.copyFile(source, dest);
+
+	            extentTest.fail("Test Failed").addScreenCaptureFromPath(path);
+	        } else {
+	            extentTest.fail("Driver is NULL");
+	        }
+
+	    } catch (Exception e) {
+	        extentTest.fail("Failure handling error: " + e.getMessage());
+	    }
 	}
 
 	@Override

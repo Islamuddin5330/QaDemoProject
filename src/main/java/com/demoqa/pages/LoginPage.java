@@ -24,8 +24,8 @@ public class LoginPage extends ActionClass{
 	
 	By loginIcon = By.xpath("//span[text()='Login']");
 	
-	By userField = By.id("userName");
-	By passField = By.cssSelector("#password");
+	By userNameField = By.id("userName");
+	By passNameField = By.cssSelector("#password");
 	By loginButton = By.cssSelector("#login");
 	By newUserButton = By.id("newUser");
 	
@@ -56,19 +56,20 @@ public class LoginPage extends ActionClass{
 //	WebElement newButton = driver.findElement(newUserButton);
 //	}
 	public void enterUserLoginDetails(String userName, String password) {
-	    waitForElemet(userField);
+	    waitForElemet(userNameField);
 
-	    WebElement user = getDriver().findElement(userField);
+	    WebElement user = getDriver().findElement(userNameField);
 	    user.clear();
 	    user.sendKeys(userName);
 	    System.out.println("Typed username");
 
-	    WebElement pass = getDriver().findElement(passField);
+	    WebElement pass = getDriver().findElement(passNameField);
 	    pass.clear();
 	    pass.sendKeys(password);
 	    System.out.println("Typed password");
 	}
 	public void clickLoginButton() {
+		 waitForElemet(loginButton);
 		javaClick(loginButton);	
 		System.out.println("User Submitted Form...");
 	}

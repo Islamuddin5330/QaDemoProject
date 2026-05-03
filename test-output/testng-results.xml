@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-29T17:53:24 IST" name="Suite" finished-at="2026-04-29T17:53:32 IST" duration-ms="7436">
+  <suite started-at="2026-05-03T13:10:03 IST" name="Suite" finished-at="2026-05-03T13:10:03 IST" duration-ms="637">
     <groups>
     </groups>
-    <test started-at="2026-04-29T17:53:24 IST" name="Test" finished-at="2026-04-29T17:53:32 IST" duration-ms="7436">
+    <test started-at="2026-05-03T13:10:03 IST" name="Test" finished-at="2026-05-03T13:10:03 IST" duration-ms="637">
       <class name="com.demoqa.test.UserLoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.demoqa.test.UserLoginTest@1df8da7a]" started-at="2026-04-29T17:53:24 IST" name="setUp" finished-at="2026-04-29T17:53:30 IST" duration-ms="5854" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="loginTest()[pri:0, instance:com.demoqa.test.UserLoginTest@1df8da7a]" started-at="2026-04-29T17:53:30 IST" name="loginTest" finished-at="2026-04-29T17:53:31 IST" duration-ms="1358" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.demoqa.test.UserLoginTest@41f69e84]" started-at="2026-05-03T13:10:03 IST" name="loginTest" data-provider="loginData" finished-at="2026-05-03T13:10:03 IST" duration-ms="561" status="FAIL">
+          <exception class="org.testng.internal.reflect.MethodMatcherException">
+            <message>
+              <![CDATA[
+[public void com.demoqa.test.UserLoginTest.loginTest(java.lang.String,java.lang.String) throws java.io.IOException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: loginTest([java.lang.String arg0, java.lang.String arg1])
+Arguments: [(java.lang.String) testuser,(java.lang.String) Password@123,(java.lang.String) ]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
+[public void com.demoqa.test.UserLoginTest.loginTest(java.lang.String,java.lang.String) throws java.io.IOException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: loginTest([java.lang.String arg0, java.lang.String arg1])
+Arguments: [(java.lang.String) testuser,(java.lang.String) Password@123,(java.lang.String) ]
+at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:46)
+at org.testng.internal.Parameters.injectParameters(Parameters.java:915)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demoqa.test.UserLoginTest@1df8da7a]" started-at="2026-04-29T17:53:31 IST" name="tearDown" finished-at="2026-04-29T17:53:32 IST" duration-ms="178" status="PASS">
+        <test-method signature="registerTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.demoqa.test.UserLoginTest@41f69e84]" started-at="2026-05-03T13:10:03 IST" name="registerTest" data-provider="registerData" finished-at="2026-05-03T13:10:03 IST" duration-ms="35" status="FAIL">
+          <exception class="org.testng.internal.reflect.MethodMatcherException">
+            <message>
+              <![CDATA[
+[public void com.demoqa.test.UserLoginTest.registerTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: registerTest([java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3])
+Arguments: [(java.lang.Integer) 1,(java.lang.String) Aleem,(java.lang.String) Khan,(java.lang.String) Aleem,(java.lang.String) aleem@123]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
+[public void com.demoqa.test.UserLoginTest.registerTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: registerTest([java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3])
+Arguments: [(java.lang.Integer) 1,(java.lang.String) Aleem,(java.lang.String) Khan,(java.lang.String) Aleem,(java.lang.String) aleem@123]
+at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:46)
+at org.testng.internal.Parameters.injectParameters(Parameters.java:915)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
+        </test-method> <!-- registerTest -->
       </class> <!-- com.demoqa.test.UserLoginTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
